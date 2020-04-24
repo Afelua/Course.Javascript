@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    uglify = require('gulp-uglify'),
+    uglify = require('gulp-uglify-es').default,
     concat = require('gulp-concat'),
     imagemin = require('gulp-imagemin'),
     svgmin = require('gulp-svgmin'),
@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 gulp.task('scripts', function () {
     gulp.src('js/*.js')
         .pipe(concat('all.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest('build'));
 });
 
@@ -75,7 +75,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('./js/*.js', gulp.series('scripts'));
+    gulp.watch('./js/**/*.js', gulp.series('scripts'));
     gulp.watch('./less/*.less', gulp.series('less'));
     gulp.watch('./templates/**/*.pug', gulp.series('templates'));
     gulp.watch('./*.images', gulp.series('images'));

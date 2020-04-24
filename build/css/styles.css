@@ -1,1 +1,1 @@
-body{background:blue}
+.container,.items{display:flex}.items{overflow:hidden;margin:0 0 0 100px;flex-wrap:wrap}.room{color:#000;width:278px;height:186px;text-align:center;margin:2px;font-size:24px;border:1px solid;display:none;line-height:2}.show{display:block}.btn{border:none;outline:none;padding:12px 16px;background-color:#f1f1f1;cursor:pointer}.btn:hover{background-color:#ddd}.btn.active{background-color:#666;color:#fff}.buttonContainer,.column,.main{display:flex}.column{flex-direction:column}.review{display:block}

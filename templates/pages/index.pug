@@ -1,10 +1,87 @@
 extends ../layout/main
 
 block main
-    #container.col
-        if youAreUsingPug
-            p Вы используете pug
-        else
-            p Начните использовать pug
-        p.
-            Тестовый параграф
+    .main
+        .column
+            h2 Services
+            .container
+                #servicesContainer.buttonContainer
+                    .column
+                        button(type='button' class='btn' id='animals') Animal Allowed
+                        button(type='button' class='btn' id='smoke') Smooking Room
+                        button(type='button' class='btn' id='sea') Sea View
+                    .column
+                        button(type='button' class='btn' id='swimmingPool') Swimming Pool
+                        button(type='button' class='btn' id='wi-fi') Wifi 24 H
+                        button(type='button' class='btn' id='breakfast') Breakfast Included
+
+            h2 Room Size
+                .container
+                    #sizeContainer.buttonContainer
+                        input(placeholder='from' id="from" class="input")
+                        -
+                        input(placeholder='to' id="to" class="input")
+
+            h2 Reviews
+            .container
+                #reviewsContainer.buttonContainer
+                    button(type='button' class='btn' id='0') 0.0
+                    button(type='button' class='btn' id='2') 2.0
+                    button(type='button' class='btn' id='4') 4.0
+                    button(type='button' class='btn' id='6') 6.0
+                    button(type='button' class='btn' id='8') 8.0
+                    button(type='button' class='btn' id='10') 10.0
+
+        .items
+            .room.animals.smoke.sea.wi-fi.breakfast
+                span  Adriatic suite
+                span.review 7.7
+                span.size 34
+            .room.smoke.sea.breakfast
+                span  Atelier
+                span.review 8.0
+                span.size 50
+            .room.sea.wi-fi.breakfast
+                span  Gallery
+                span.review 6.5
+                span.size 80
+            .room.animals.smoke.swimmingPool.breakfast
+                span  Grand Piazza Suite
+                span.review 9.8
+                span.size 109
+            .room.animals.wi-fi
+                span  Business
+                span.review 4.6
+                span.size 25
+            .room.smoke.wi-fi
+                span  Economy
+                span.review 7.5
+                span.size 18
+            .room.smoke
+                span  Economy light
+                span.review 4.7
+                span.size 12
+            .room.smoke.wi-fi.breakfast
+                span  Business+
+                span.review 5.0
+                span.size 25
+            .room.animals.sea.wi-fi.breakfast
+                span  Suite
+                span.review 3.0
+                span.size 30
+            .room.smoke.sea.swimmingPool.wi-fi.breakfast
+                span  Suite+
+                span.review 7.5
+                span.size 35
+            .room.smoke.animals.sea.swimmingPool.breakfast
+                span  VIP
+                span.review 7.9
+                span.size 100
+            .room.sea.swimmingPool.wi-fi.breakfast
+                span  All inclusive
+                span.review 8.5
+                span.size 89
+            .room.animals.wi-fi
+                span  Promo
+                span.review 6.6
+                span.size 8
