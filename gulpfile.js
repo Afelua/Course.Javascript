@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 
 
 gulp.task('scripts', function () {
-    gulp.src('js/*.js')
+    gulp.src('js/shuffle.js')
         .pipe(concat('all.js'))
         // .pipe(uglify())
         .pipe(gulp.dest('build'));

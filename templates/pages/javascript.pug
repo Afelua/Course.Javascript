@@ -15,14 +15,12 @@ block main
                         button(type='button' class='btn' id='wi-fi') Wifi 24 H
                         button(type='button' class='btn' id='breakfast') Breakfast Included
 
-
             h2 Room Size
                 .container
                     #sizeContainer.buttonContainer
                         input(placeholder='from' id="from" class="input")
                         -
                         input(placeholder='to' id="to" class="input")
-
 
             h2 Reviews
             .container
@@ -34,57 +32,56 @@ block main
                     button(type='button' class='btn' id='8') 8.0
                     button(type='button' class='btn' id='10') 10.0
 
-
         .items
-            div(data-groups='["animals", "smoke", "sea", "wi-fi", "breakfast"] ' class="room")
+            .room.animals.smoke.sea.wi-fi.breakfast
                 span  Adriatic suite
                 span.review 7.7
                 span.size 34
-            div(data-groups='["smoke", "sea", "breakfast"]' class="room")
+            .room.smoke.sea.breakfast
                 span  Atelier
                 span.review 8.0
                 span.size 50
-            div(data-groups='["sea", "wi-fi", "breakfast"]' class="room")
+            .room.sea.wi-fi.breakfast
                 span  Gallery
                 span.review 6.5
                 span.size 80
-            div(data-groups='["swimmingPool", "animals", "smoke", "breakfast"]' class="room")
+            .room.animals.smoke.swimmingPool.breakfast
                 span  Grand Piazza Suite
                 span.review 9.8
                 span.size 109
-            div(data-groups='["animals", "wi-fi"]' class="room")
+            .room.animals.wi-fi
                 span  Business
                 span.review 4.6
                 span.size 25
-            div(data-groups='["smoke", "wi-fi"]' class="room")
+            .room.smoke.wi-fi
                 span  Economy
                 span.review 7.5
                 span.size 18
-            div(data-groups='["smoke"]' class="room")
+            .room.smoke
                 span  Economy light
                 span.review 4.7
                 span.size 12
-            div(data-groups='["smoke", "wi-fi", "breakfast"]' class="room")
+            .room.smoke.wi-fi.breakfast
                 span  Business+
                 span.review 5.0
                 span.size 25
-            div(data-groups='["animals", "sea", "wi-fi", "breakfast"]' class="room")
+            .room.animals.sea.wi-fi.breakfast
                 span  Suite
                 span.review 3.0
                 span.size 30
-            div(data-groups='["swimmingPool", "smoke", "sea", "wi-fi", "breakfast"]' class="room")
+            .room.smoke.sea.swimmingPool.wi-fi.breakfast
                 span  Suite+
                 span.review 7.5
                 span.size 35
-            div(data-groups='["swimmingPool", "smoke", "animals", "sea", "breakfast"]' class="room")
+            .room.smoke.animals.sea.swimmingPool.breakfast
                 span  VIP
                 span.review 7.9
                 span.size 100
-            div(data-groups='["swimmingPool", "sea", "wi-fi", "breakfast"]' class="room")
+            .room.sea.swimmingPool.wi-fi.breakfast
                 span  All inclusive
                 span.review 8.5
                 span.size 89
-            div(data-groups='["animals", "wi-fi"]' class="room")
+            .room.animals.wi-fi
                 span  Promo
                 span.review 6.6
                 span.size 8
