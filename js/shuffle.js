@@ -2,7 +2,7 @@ const Shuffle = window.Shuffle;
 const element = document.querySelector('.items');
 
 const shuffleInstance = new Shuffle(element, {
-    itemSelector: '.room',
+    itemSelector: '.item',
 });
 
 shuffleInstance.filter();
@@ -10,10 +10,10 @@ shuffleInstance.filter();
 let currentValueServices = "all";
 
 const btnContainerServices = document.getElementById("servicesContainer");
-const buttonsServices = btnContainerServices.getElementsByClassName("btn");
+const buttonsServices = btnContainerServices.getElementsByClassName("services__checkbox");
 
 for (let i = 0; i < buttonsServices.length; i++) {
-    buttonsServices[i].addEventListener("click", function(e) {
+    buttonsServices[i].addEventListener("change", function(e) {
         const current = document.getElementsByClassName("active");
         const id = e.target.id;
         if (id === currentValueServices) {
@@ -50,7 +50,7 @@ for (let i = 0; i < buttonsReviews.length; i++) {
             }
             this.className += " active";
             shuffleInstance.filter(function (element) {
-                return element.children[1].innerText >= id;
+                return parseFloat(element.querySelector('.room__rating').innerText) >= id;
             });
             currentValueReviews = id;
         }
@@ -59,20 +59,16 @@ for (let i = 0; i < buttonsReviews.length; i++) {
 
 
 const inputContainerSize = document.getElementById("sizeContainer");
-const inputsSize = inputContainerSize.getElementsByClassName("input");
+const inputsSize = inputContainerSize.getElementsByClassName("size__input");
 
 for (let i = 0; i < inputsSize.length; i++) {
     inputsSize[i].addEventListener("input", function(e) {
         shuffleInstance.filter();
         shuffleInstance.filter(function (element) {
-            console.log(element);
             const from = document.getElementById("from").value || 0;
             const to = document.getElementById("to").value || 200;
-            const roomSize = element.children[2].innerText;
-            console.log(roomSize);
-            console.log(from);
-            console.log(to);
-            return parseInt(roomSize) >= from && parseInt(roomSize) <= to;
+            const roomSize = parseFloat(element.querySelector('.room__square').innerText);
+            return roomSize >= from && roomSize <= to;
         });
     });
 }
